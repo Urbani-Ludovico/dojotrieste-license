@@ -162,4 +162,25 @@
     
     \newpage
     \associations
+
+    %
+    % Athlete
+    %
+    \newcommand{\athlete}{
+        \begin{hhtable}{
+            colspec = {c c X[c]},
+            cell{1}{1} = {c=3}{c},
+            cell{3-Z}{1} = {cmd=\inteval{\value{rownum}-2}}
+        }
+            REGISTRO ATTIVITÀ \\
+            N. & ANNO SPORTIVO & TIMBRO E FIRMA \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\
+        \end{hhtable}
+        }
+
+    \newpage
+    \addcontentsline{toc}{chapter}{REGISTRO ATTIVITÀ}
+    \athlete
+    
+    \newpage
+    \athlete
 \end{document}
