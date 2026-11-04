@@ -241,6 +241,59 @@
         {10\textdegree\\JUDAN} \\
     \end{hhtable}
 
+    %
+    % Competitions
+    %
+    \newcommand{\competitions}[1]{
+        \begin{hhtable}{
+            colspec = {c c X[c] c},
+            cell{1}{1} = {c=4}{c},
+            cell{3-Z}{1} = {cmd=\inteval{\value{rownum}-2+#1}}
+        }
+            GARE \\
+            N. & {DATA E\\\;\;LUOGO\;\;} & COMPETIZIONE & RES. \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\
+        \end{hhtable}
+    }
+
+    \newpage
+    \addcontentsline{toc}{chapter}{GARE}
+    \competitions{0}
+
+    \newpage
+    \competitions{10}
+
+    \newpage
+    \competitions{20}
+
+    \newpage
+    \competitions{30}
+
+    %
+    % Activity
+    %
+    \newcommand{\activity}[1]{
+        \begin{hhtable}{
+            colspec = {c c X[c]},
+            cell{1}{1} = {c=3}{c},
+            cell{3-Z}{1} = {cmd=\inteval{\value{rownum}-2+#1}}
+        }
+            ATTIVITÀ \\
+            N. & {DATA E\\\;\;LUOGO\;\;} & EVENTO \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\
+        \end{hhtable}
+    }
+
+    \newpage
+    \addcontentsline{toc}{chapter}{ATTIVITÀ}
+    \activity{0}
+
+    \newpage
+    \activity{10}
+
+    \newpage
+    \activity{20}
+
+    \newpage
+    \activity{30}
 
     %
     % TOC
