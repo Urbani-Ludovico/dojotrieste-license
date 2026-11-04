@@ -67,6 +67,57 @@
 }
 
 
+%========================================%
+% TABLE                                  %
+%========================================%
+
+\NewDocumentEnvironment{htable}{m m m}{
+    \begin{tblr}{
+        width = {\textwidth},
+        colspec = {c X[c]},
+        cell{1}{1} = {c=#1}{
+            c,
+            font = {\large\bfseries}
+        },
+        rows = {
+            ht = #3cm,
+            valign = m
+        },
+        row{1} = {
+            ht = 1.5cm,
+            abovesep = 0.2cm
+        },
+        row{2} = {
+            ht = 1cm,
+            abovesep = 0.1cm
+        },
+        hlines, vlines
+    }
+        #2 \\
+}{
+    \end{tblr}
+}
+
+\NewTblrEnviron{hhtable}
+\SetTblrInner[hhtable]{
+    width = {\textwidth},
+    rows = {
+        ht = 0.9cm,
+        valign = m
+    },
+    row{1} = {
+        ht = 1.5cm,
+        valign = m,
+        abovesep = 0.2cm,
+        font = {\large\bfseries}
+    },
+    row{2} = {
+        abovesep = 0.1cm
+    },
+    hlines, vlines
+}
+
+
 \begin{document}
     \frontmatter
     \pagestyle{empty}
@@ -105,7 +156,7 @@
         colspec = {l X},
         hline{2-Y} = {solid},
         row{Z} = {
-            belowsep+=6pt
+            belowsep = 0.3cm
         }
     }
         COGNOME & \\
@@ -116,4 +167,27 @@
         RESIDENZA \\
         DATA DI EMISSIONE
     \end{tblr}
+
+    %
+    % Associations
+    %
+    \newpage
+    \addcontentsline{toc}{chapter}{ASSOCIAZIONI}
+    \begin{hhtable}{
+        colspec = {c c X[c]},
+        cell{1}{1} = {c=3}{c},
+        cell{3-Z}{1} = {cmd=\inteval{\value{rownum}-2}}
+    }
+        ASSOCIAZIONI \\
+        N. & ANNO SOCIALE & TIMBRO E FIRMA \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\
+    \end{hhtable}
+    \newpage
+    \begin{hhtable}{
+        colspec = {c c X[c]},
+        cell{1}{1} = {c=3}{c},
+        cell{3-Z}{1} = {cmd=\inteval{\value{rownum}+8}}
+    }
+        ASSOCIAZIONI \\
+        N. & ANNO SOCIALE & TIMBRO E FIRMA \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\
+    \end{hhtable}
 \end{document}
