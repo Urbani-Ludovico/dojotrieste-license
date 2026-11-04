@@ -141,26 +141,25 @@
         DATA DI EMISSIONE
     \end{tblr}
 
+
     %
     % Associations
     %
+    \newcommand{\associations}{
+        \begin{hhtable}{
+            colspec = {c c X[c]},
+            cell{1}{1} = {c=3}{c},
+            cell{3-Z}{1} = {cmd=\inteval{\value{rownum}-2}}
+        }
+            ASSOCIAZIONI \\
+            N. & ANNO SOCIALE & TIMBRO E FIRMA \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\
+        \end{hhtable}
+        }
+
     \newpage
     \addcontentsline{toc}{chapter}{ASSOCIAZIONI}
-    \begin{hhtable}{
-        colspec = {c c X[c]},
-        cell{1}{1} = {c=3}{c},
-        cell{3-Z}{1} = {cmd=\inteval{\value{rownum}-2}}
-    }
-        ASSOCIAZIONI \\
-        N. & ANNO SOCIALE & TIMBRO E FIRMA \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\
-    \end{hhtable}
+    \associations
+    
     \newpage
-    \begin{hhtable}{
-        colspec = {c c X[c]},
-        cell{1}{1} = {c=3}{c},
-        cell{3-Z}{1} = {cmd=\inteval{\value{rownum}+8}}
-    }
-        ASSOCIAZIONI \\
-        N. & ANNO SOCIALE & TIMBRO E FIRMA \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\
-    \end{hhtable}
+    \associations
 \end{document}
