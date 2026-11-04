@@ -161,44 +161,41 @@
     %
     % Associations
     %
-    \newcommand{\associations}{
+    \newcommand{\associations}[1]{
         \begin{hhtable}{
             colspec = {c c X[c]},
             cell{1}{1} = {c=3}{c},
-            cell{3-Z}{1} = {cmd=\inteval{\value{rownum}-2}}
+            cell{3-Z}{1} = {cmd=\inteval{\value{rownum}-2+#1}}
         }
             ASSOCIAZIONI \\
-            N. & ANNO SOCIALE & TIMBRO E FIRMA \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\
+            N. & {ANNO\\\;\;SOCIALE\;\;} & TIMBRO E FIRMA \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\
         \end{hhtable}
     }
 
     \newpage
     \addcontentsline{toc}{chapter}{ASSOCIAZIONI}
-    \associations
-    
-    \newpage
-    \associations
+    \associations{0}
 
     %
     % Athlete
     %
-    \newcommand{\athlete}{
+    \newcommand{\athlete}[1]{
         \begin{hhtable}{
-            colspec = {c c X[c]},
-            cell{1}{1} = {c=3}{c},
-            cell{3-Z}{1} = {cmd=\inteval{\value{rownum}-2}}
+            colspec = {c c c X[c]},
+            cell{1}{1} = {c=4}{c},
+            cell{3-Z}{1} = {cmd=\inteval{\value{rownum}-2+#1}}
         }
             REGISTRO ATTIVITÀ \\
-            N. & ANNO SPORTIVO & TIMBRO E FIRMA \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\
+            N. & {ANNO\\SPORTIVO} & SETTORE & TIMBRO E FIRMA \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\
         \end{hhtable}
     }
 
     \newpage
     \addcontentsline{toc}{chapter}{REGISTRO ATTIVITÀ}
-    \athlete
+    \athlete{0}
     
     \newpage
-    \athlete
+    \athlete{10}
 
     %
     % TOC
