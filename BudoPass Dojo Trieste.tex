@@ -71,33 +71,6 @@
 % TABLE                                  %
 %========================================%
 
-\NewDocumentEnvironment{htable}{m m m}{
-    \begin{tblr}{
-        width = {\textwidth},
-        colspec = {c X[c]},
-        cell{1}{1} = {c=#1}{
-            c,
-            font = {\large\bfseries}
-        },
-        rows = {
-            ht = #3cm,
-            valign = m
-        },
-        row{1} = {
-            ht = 1.5cm,
-            abovesep = 0.2cm
-        },
-        row{2} = {
-            ht = 1cm,
-            abovesep = 0.1cm
-        },
-        hlines, vlines
-    }
-        #2 \\
-}{
-    \end{tblr}
-}
-
 \NewTblrEnviron{hhtable}
 \SetTblrInner[hhtable]{
     width = {\textwidth},
