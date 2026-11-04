@@ -91,6 +91,18 @@
 }
 
 
+%========================================%
+% TOC                                    %
+%========================================%
+
+\usepackage{tocloft}
+\renewcommand{\contentsname}{}
+\renewcommand{\cfttoctitlefont}{}
+\renewcommand{\cftaftertoctitle}{}
+\setlength{\cftbeforetoctitleskip}{0pt}
+\setlength{\cftaftertoctitleskip}{0pt}
+
+
 \begin{document}
     \frontmatter
     \pagestyle{empty}
@@ -112,6 +124,7 @@
     %
     % Person data
     %
+    \addcontentsline{toc}{chapter}{DATI SOCIO}
     \frame
     \begin{center}
         \textit{Associazione Sportiva Dilettantistica} \\[0.2cm]
@@ -154,7 +167,7 @@
             ASSOCIAZIONI \\
             N. & ANNO SOCIALE & TIMBRO E FIRMA \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\
         \end{hhtable}
-        }
+    }
 
     \newpage
     \addcontentsline{toc}{chapter}{ASSOCIAZIONI}
@@ -175,7 +188,7 @@
             REGISTRO ATTIVITÀ \\
             N. & ANNO SPORTIVO & TIMBRO E FIRMA \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\
         \end{hhtable}
-        }
+    }
 
     \newpage
     \addcontentsline{toc}{chapter}{REGISTRO ATTIVITÀ}
@@ -183,4 +196,11 @@
     
     \newpage
     \athlete
+
+    %
+    % TOC
+    %
+    \newpage
+    \tableofcontents
+    \thispagestyle{empty}
 \end{document}
