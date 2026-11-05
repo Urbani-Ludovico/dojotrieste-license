@@ -278,3 +278,23 @@
         N. & {ANNO\\SPORTIVO} & SETTORE & TIMBRO E FIRMA \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\
     \end{logtable}%
 }
+
+\newcommand{\belts}{%
+    \begin{logtable}{
+        colspec = {c X[2, c] X[3, c]},
+        cell{1}{1} = {c=3}{c}
+    }
+        GRADUAZIONI \\
+        CINTURA & DATA & FIRMA \\
+        BIANCA \\
+        {BIANCA\\GIALLA} \\
+        GIALLA \\
+        {GIALLA\\ARANCIONE} \\
+        ARANCIONE \\
+        {ARANCIONE\\VERDE} \\
+        VERDE \\
+        {VERDE\\BLU} \\
+        BLU \\
+        MARRONE
+    \end{logtable}%
+}
