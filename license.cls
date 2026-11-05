@@ -110,7 +110,7 @@
 % TABLES                                 %
 %========================================%
 
-\newcommand{\StretchNRows}[1]{\dimexpr(\textheight  - 1.5cm - 0.8cm - \arrayrulewidth * (#1 + 3) - 2pt * (#1 + 2))/10\relax}
+\newcommand{\StretchNRows}[1]{\dimexpr(\textheight - 1.5cm - 0.8cm - \arrayrulewidth * (#1 + 3) - 2pt * (#1 + 2) - 1pt)/10\relax}
 
 \NewTblrEnviron{logtable}
 \SetTblrInner[logtable]{

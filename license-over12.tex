@@ -9,45 +9,48 @@
 
 
     %
-    % Associations
+    % Memberships
     %
-    \newcommand{\associations}[1]{
+    \newpage
+    \addcontentsline{toc}{chapter}{ASSOCIAZIONI}
         \begin{logtable}{
-            colspec = {c c X[c]},
+        colspec = {c X[c] X[2, c]},
             row{3-Z} = {
                 ht = \StretchNRows{10}
             },
+        column{1} = {
+            leftsep = 1.5mm,
+            rightsep = 1.5mm
+        },
             cell{1}{1} = {c=3}{c},
-            cell{3-Z}{1} = {cmd=\RowNumber{#1}}
+        cell{3-Z}{1} = {cmd=\RowNumber{0}}
         }
             ASSOCIAZIONI \\
-            N. & {ANNO\\\;\;SOCIALE\;\;} & TIMBRO E FIRMA \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\
+        N. & {ANNO\\SOCIALE} & TIMBRO E FIRMA \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\
         \end{logtable}
-    }
-
-    \newpage
-    \addcontentsline{toc}{chapter}{ASSOCIAZIONI}
-    \associations{0}
 
     %
-    % Athlete
+    % Athlete Log
     %
     \newcommand{\athlete}[1]{
         \begin{logtable}{
-            colspec = {c c c X[c]},
+            colspec = {c X[c] X[c] X[2, c]},
+            row{3-Z} = {
+                ht = \StretchNRows{10}
+            },
+            column{1} = {
+                leftsep = 1.5mm,
+                rightsep = 1.5mm
+            },
             cell{1}{1} = {c=4}{c},
-            cell{3-Z}{1} = {cmd=\inteval{\value{rownum}-2+#1}}
+            cell{3-Z}{1} = {cmd=\RowNumber{#1}}
         }
-            REGISTRO ATTIVITÀ \\
+            STORICO ATLETA \\
             N. & {ANNO\\SPORTIVO} & SETTORE & TIMBRO E FIRMA \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\
         \end{logtable}
     }
-
-    \newpage
-    \addcontentsline{toc}{chapter}{REGISTRO ATTIVITÀ}
+    \addcontentsline{toc}{chapter}{STORICO ATLETA}
     \athlete{0}
-    
-    \newpage
     \athlete{10}
 
     %
