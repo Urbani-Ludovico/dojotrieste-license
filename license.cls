@@ -117,7 +117,7 @@
     - 0.8cm % Header
     - \arrayrulewidth * (#1 + 3) % Horizontal lines
     - 2pt * (#1 + 2) % Vertical space between rows
-)/10\relax}
+)/#1\relax}
 
 \NewTblrEnviron{logtable}
 \SetTblrInner[logtable]{
