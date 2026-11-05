@@ -13,36 +13,12 @@
     %
     \newpage
     \addcontentsline{toc}{chapter}{ASSOCIAZIONI}
-    \begin{logtable}{
-        colspec = {c X[c] X[2, c]},
-        column{1} = {
-            leftsep = 1.5mm,
-            rightsep = 1.5mm
-        },
-        cell{1}{1} = {c=3}{c},
-        cell{3-Z}{1} = {cmd=\RowNumber{0}}
-    }
-        ASSOCIAZIONI \\
-        N. & {ANNO\\SOCIALE} & TIMBRO E FIRMA \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\
-    \end{logtable}
+    \memberships{0}
 
     %
     % Athlete Log
     %
-    \newcommand{\athlete}[1]{%
-        \begin{logtable}{
-            colspec = {c X[c] X[c] X[2, c]},
-            column{1} = {
-                leftsep = 1.5mm,
-                rightsep = 1.5mm
-            },
-            cell{1}{1} = {c=4}{c},
-            cell{3-Z}{1} = {cmd=\RowNumber{#1}}
-        }
-            STORICO ATLETA \\
-            N. & {ANNO\\SPORTIVO} & SETTORE & TIMBRO E FIRMA \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\
-        \end{logtable}%
-    }
+    \newpage
     \addcontentsline{toc}{chapter}{STORICO ATLETA}
     \athlete{0}
     \athlete{10}
@@ -50,6 +26,7 @@
     %
     % Belts
     %
+    \newpage
     \addcontentsline{toc}{chapter}{GRADUAZIONI}
     \begin{logtable}{
         colspec = {c X[2, c] X[3, c]},
@@ -127,6 +104,7 @@
     %
     % Competitions
     %
+    \newpage
     \newcommand{\competitions}[1]{%
         \begin{logtable}{
             colspec = {c X[c] X[2, c] c},
@@ -151,6 +129,7 @@
     %
     % Activity
     %
+    \newpage
     \newcommand{\activity}[1]{%
         \begin{logtable}{
             colspec = {c X[c] X[2, c]},

@@ -248,3 +248,33 @@
         DATA DI EMISSIONE
     \end{tblr}
 }
+
+\newcommand{\memberships}[1]{%
+    \begin{logtable}{
+        colspec = {c X[c] X[2, c]},
+        column{1} = {
+            leftsep = 1.5mm,
+            rightsep = 1.5mm
+        },
+        cell{1}{1} = {c=3}{c},
+        cell{3-Z}{1} = {cmd=\RowNumber{#1}}
+    }
+        ASSOCIAZIONI \\
+        N. & {ANNO\\SOCIALE} & TIMBRO E FIRMA \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\
+    \end{logtable}%
+}
+
+\newcommand{\athlete}[1]{%
+    \begin{logtable}{
+        colspec = {c X[c] X[c] X[2, c]},
+        column{1} = {
+            leftsep = 1.5mm,
+            rightsep = 1.5mm
+        },
+        cell{1}{1} = {c=4}{c},
+        cell{3-Z}{1} = {cmd=\RowNumber{#1}}
+    }
+        STORICO ATLETA \\
+        N. & {ANNO\\SPORTIVO} & SETTORE & TIMBRO E FIRMA \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\
+    \end{logtable}%
+}
