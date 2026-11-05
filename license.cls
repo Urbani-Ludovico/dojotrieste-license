@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{djtslicense}[2026/11/01 Latex class for Dojo Trieste license]
+\ProvidesClass{license}[2026/11/01 Latex class for Dojo Trieste license]
 
 
 % ========================================%
