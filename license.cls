@@ -110,7 +110,13 @@
 % TABLES                                 %
 %========================================%
 
-\newcommand{\StretchNRows}[1]{\dimexpr(\textheight - 1.5cm - 0.8cm - \arrayrulewidth * (#1 + 3) - 2pt * (#1 + 2) - 1pt)/10\relax}
+\newcommand{\StretchNRows}[1]{\dimexpr(
+    \textheight 
+    - 1.5cm % Title
+    - 0.8cm % Header
+    - \arrayrulewidth * (#1 + 3) % Horizontal lines
+    - 2pt * (#1 + 2) % Vertical space between rows
+)/10\relax}
 
 \NewTblrEnviron{logtable}
 \SetTblrInner[logtable]{
@@ -126,6 +132,9 @@
     },
     row{2} = {
         ht = 0.8cm
+    },
+    row{3-Z} = {
+        ht = \StretchNRows{10}
     },
     hlines, vlines
 }
