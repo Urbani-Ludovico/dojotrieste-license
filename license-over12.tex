@@ -1,129 +1,7 @@
-\documentclass[
-    twoside,
-    10pt
-]{book}
-
-%========================================%
-% PAGE SETTINGS                          %
-%========================================%
-
-\usepackage[
-    paperwidth = 11cm,
-    paperheight = 15cm,
-    margin = 0.8cm,
-    footskip = 0.5cm,
-    % showframe
-]{geometry}
-
-\usepackage[utf8]{inputenc}
-\usepackage[T1]{fontenc}
-\usepackage{helvet}
-\renewcommand{\familydefault}{\sfdefault}
-
-\usepackage[
-	skip = 0pt,
-	indent = 0pt
-]{parskip}
-
-\usepackage{graphicx}
-\graphicspath{ {./images} }
-
-\usepackage{tabularray}
-
-\usepackage{textcomp}
-
-
-%========================================%
-% PAGE STYLE                             %
-%========================================%
-
-\usepackage{fancyhdr}
-
-\fancypagestyle{std}{
-    \renewcommand{\headrulewidth}{0pt}
-	\fancyfoot[C]{-- \thepage\ --}
-}
-
-
-%========================================%
-% CLORS                                  %
-%========================================%
-
-\usepackage{xcolor}
-
-\definecolor{main}{RGB}{0, 60, 160}
-\color{main}
-
-
-%========================================%
-% TIKZ                                   %
-%========================================%
-
-\usepackage{tikz}
-\usepackage{tikzpagenodes}
-\renewcommand{\frame}{
-    \tikz[remember picture, overlay] \draw
-        (current page text area.south west)
-        rectangle
-        (current page text area.north east);
-}
-
-
-%========================================%
-% TABLE                                  %
-%========================================%
-
-\NewTblrEnviron{hhtable}
-\SetTblrInner[hhtable]{
-    width = {\textwidth},
-    rows = {
-        ht = 0.84cm,
-        valign = m,
-        abovesep = 0.12cm
-    },
-    row{1} = {
-        ht = 1.5cm,
-        valign = m,
-        abovesep = 0.2cm,
-        font = {\large\bfseries}
-    },
-    row{2} = {
-        abovesep = 0.1cm
-    },
-    hlines, vlines
-}
-
-
-%========================================%
-% TOC                                    %
-%========================================%
-
-\usepackage{tocloft}
-\renewcommand{\contentsname}{}
-\renewcommand{\cfttoctitlefont}{}
-\renewcommand{\cftaftertoctitle}{}
-\setlength{\cftbeforetoctitleskip}{0pt}
-\setlength{\cftaftertoctitleskip}{0pt}
+\documentclass{license}
 
 
 \begin{document}
-    \frontmatter
-    \pagestyle{empty}
-    \begin{titlepage}
-        \centering
-        \includegraphics[height = 3cm]{logo.pdf} \\[0.5cm]
-        \textbf{\Large A.S.D. DOJO Trieste}
-        \vfill
-        \textbf{Libretto personale del} \\[0.4cm]
-        \textbf{\Huge SOCIO}
-        \vfill
-        \includegraphics[height = 1cm]{fijlkam.pdf} \\
-        Associazione sportiva affiliata \\
-        alla FIJLKAM e al CONI
-    \end{titlepage}
-    \mainmatter{}
-    \pagestyle{std}
-
     %
     % Person data
     %
@@ -162,14 +40,14 @@
     % Associations
     %
     \newcommand{\associations}[1]{
-        \begin{hhtable}{
+        \begin{logtable}{
             colspec = {c c X[c]},
             cell{1}{1} = {c=3}{c},
             cell{3-Z}{1} = {cmd=\inteval{\value{rownum}-2+#1}}
         }
             ASSOCIAZIONI \\
             N. & {ANNO\\\;\;SOCIALE\;\;} & TIMBRO E FIRMA \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\
-        \end{hhtable}
+        \end{logtable}
     }
 
     \newpage
@@ -180,14 +58,14 @@
     % Athlete
     %
     \newcommand{\athlete}[1]{
-        \begin{hhtable}{
+        \begin{logtable}{
             colspec = {c c c X[c]},
             cell{1}{1} = {c=4}{c},
             cell{3-Z}{1} = {cmd=\inteval{\value{rownum}-2+#1}}
         }
             REGISTRO ATTIVITÀ \\
             N. & {ANNO\\SPORTIVO} & SETTORE & TIMBRO E FIRMA \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\
-        \end{hhtable}
+        \end{logtable}
     }
 
     \newpage
@@ -202,7 +80,7 @@
     %
     \newpage
     \addcontentsline{toc}{chapter}{GRADUAZIONI}
-    \begin{hhtable}{
+    \begin{logtable}{
         colspec = {c X[c] X[c]},
         cell{1}{1} = {c=3}{c},
         row{2-Z} = {
@@ -220,10 +98,10 @@
         {VERDE\\BLU} \\
         BLU \\
         MARRONE
-    \end{hhtable}
+    \end{logtable}
     
     \newpage
-    \begin{hhtable}{
+    \begin{logtable}{
         colspec = {c X[c] X[c]},
         cell{1}{1} = {c=3}{c}
     }
@@ -239,20 +117,65 @@
         {8\textdegree\\HACHIDAN} \\
         {9\textdegree\\KYUDAN} \\
         {10\textdegree\\JUDAN} \\
-    \end{hhtable}
+    \end{logtable}
+
+    %
+    % Titles
+    %
+    \newpage
+    \addcontentsline{toc}{chapter}{TITOLI}
+    \begin{logtable}{
+        colspec = {c c X[c] X[c]},
+        cell{1}{1} = {c=4}{c},
+        row{2-Z} = {
+            ht = 0.955cm
+        }
+    }
+        TITOLI \\
+        SETTORE & TITOLO & DATA & LUOGO \\
+        JUDO & {ALLENATORE\\BASE} \\
+        JUDO & ALLENATORE \\
+        JUDO & ISTRUTTORE \\
+        JUDO & MAESTRO \\
+        MGA & {ALLENATORE\\BASE} \\
+        MGA & ALLENATORE \\
+        MGA & ISTRUTTORE \\
+        MGA & MAESTRO
+    \end{logtable}
+    
+    \newpage
+    \begin{logtable}{
+        colspec = {c c X[c] X[c]},
+        cell{1}{1} = {c=4}{c},
+        row{2-Z} = {
+            ht = 0.955cm
+        }
+    }
+        TITOLI \\
+        SETTORE & TITOLO & DATA & LUOGO \\
+        JUDO & {ARBITRO\\REGIONALE} \\
+        JUDO & {ARBITRO\\NAZIONALE} \\
+        JUDO & {ARBITRO\\INTERNAZ.} \\
+        JUDO & {GIUDICE KATA\\REGIONALE} \\
+        JUDO & {GIUDICE KATA\\NAZIONALE} \\
+        JUDO & {GIUDICE KATA\\INTERNAZ.} \\
+        JUDO & {P. DI GIURIA\\REGIONALE} \\
+        JUDO & {P. DI GIURIA\\NAZIONALE} \\
+        JUDO & {P. DI GIURIA\\INTERNAZ.}
+    \end{logtable}
 
     %
     % Competitions
     %
     \newcommand{\competitions}[1]{
-        \begin{hhtable}{
+        \begin{logtable}{
             colspec = {c c X[c] c},
             cell{1}{1} = {c=4}{c},
             cell{3-Z}{1} = {cmd=\inteval{\value{rownum}-2+#1}}
         }
             GARE \\
             N. & {DATA E\\\;\;LUOGO\;\;} & COMPETIZIONE & RES. \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\
-        \end{hhtable}
+        \end{logtable}
     }
 
     \newpage
@@ -268,18 +191,21 @@
     \newpage
     \competitions{30}
 
+    \newpage
+    \competitions{50}
+
     %
     % Activity
     %
     \newcommand{\activity}[1]{
-        \begin{hhtable}{
+        \begin{logtable}{
             colspec = {c c X[c]},
             cell{1}{1} = {c=3}{c},
             cell{3-Z}{1} = {cmd=\inteval{\value{rownum}-2+#1}}
         }
             ATTIVITÀ \\
             N. & {DATA E\\\;\;LUOGO\;\;} & EVENTO \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\
-        \end{hhtable}
+        \end{logtable}
     }
 
     \newpage
@@ -295,10 +221,6 @@
     \newpage
     \activity{30}
 
-    %
-    % TOC
-    %
     \newpage
-    \tableofcontents
-    \thispagestyle{empty}
+    \activity{40}
 \end{document}
