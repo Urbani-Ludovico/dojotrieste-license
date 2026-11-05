@@ -181,3 +181,41 @@
     \tableofcontents
     \thispagestyle{empty}
 }
+
+
+%========================================%
+% ELEMENTS                               %
+%========================================%
+
+\newcommand{\PersonData}{
+    \addcontentsline{toc}{chapter}{DATI SOCIO}
+    \frame
+    \begin{center}
+        \textit{Associazione Sportiva Dilettantistica} \\[0.2cm]
+        \textbf{\LARGE DOJO TRIESTE}
+    \end{center}
+    \vfill
+    \begin{center}
+        \begin{tikzpicture}
+            \draw (0,0) rectangle (35mm,45mm) node[midway, text opacity = 0.5] {FOTO};
+        \end{tikzpicture}
+    \end{center}
+    \vfill\vfill
+    \begin{tblr}{
+        width = {\textwidth},
+        colspec = {l X},
+        hline{2-Y} = {solid},
+        rows = {
+            ht = 0.5cm,
+            valign = m
+        }
+    }
+        COGNOME & \\
+        NOME \\
+        DATA DI NASCITA \\
+        LUOGO DI NASCITA \\
+        CODICE FISCALE \\
+        RESIDENZA \\
+        DATA DI EMISSIONE
+    \end{tblr}
+}
