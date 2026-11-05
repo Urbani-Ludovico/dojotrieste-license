@@ -41,7 +41,8 @@
 \geometry{
     paperwidth = \option@PaperWidth,
     paperheight = \option@PaperHeight,
-    margin = 0.8cm,
+    hmargin = 0.75cm,
+    vmargin = 1cm,
     footskip = 0.5cm
 }
 
