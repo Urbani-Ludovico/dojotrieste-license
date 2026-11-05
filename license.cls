@@ -110,22 +110,22 @@
 % TABLES                                 %
 %========================================%
 
+\newcommand{\StretchNRows}[1]{\dimexpr(\textheight  - 1.5cm - 0.8cm - \arrayrulewidth * (#1 + 3) - 2pt * (#1 + 2))/10\relax}
+
 \NewTblrEnviron{logtable}
 \SetTblrInner[logtable]{
     width = {\textwidth},
+    rowsep = 0pt,
     rows = {
-        ht = 0.84cm,
         valign = m,
-        abovesep = 0.12cm
+        abovesep = 2pt
     },
     row{1} = {
         ht = 1.5cm,
-        valign = m,
-        abovesep = 0.2cm,
         font = {\large\bfseries}
     },
     row{2} = {
-        abovesep = 0.1cm
+        ht = 0.8cm
     },
     hlines, vlines
 }
