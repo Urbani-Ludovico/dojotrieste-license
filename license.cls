@@ -179,6 +179,12 @@
 \AtEndDocument{
     \backmatter
     \tableofcontents
+    \vfill
+    \begin{center}
+        \footnotesize
+        Il presente libretto ha validità decennale dalla data di rilazio e deve essere conservato con cura dal socio. \\
+        In caso di smarrimento o spazio insufficiente, il socio è tenuto a richiederne un altro.
+    \end{center}
     \thispagestyle{empty}
 }
 
