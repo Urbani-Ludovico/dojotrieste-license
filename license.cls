@@ -130,6 +130,8 @@
     hlines, vlines
 }
 
+\newcommand{\RowNumber}[1]{\inteval{\value{rownum}-2+#1}}
+
 
 %========================================%
 % TOC                                    %
