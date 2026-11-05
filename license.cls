@@ -15,8 +15,8 @@
 
 \DeclareStringOption{Age}
 \DeclareStringOption[10pt]{FontSize}
-\DeclareStringOption[11cm]{PaperWidth}
-\DeclareStringOption[15cm]{PaperHeight}
+\DeclareStringOption[12cm]{PaperWidth}
+\DeclareStringOption[16cm]{PaperHeight}
 
 \ProcessKeyvalOptions*
 
