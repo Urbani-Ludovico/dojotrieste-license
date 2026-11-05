@@ -86,7 +86,8 @@
 
 \RequirePackage{xcolor}
 
-\definecolor{main}{RGB}{0, 60, 160}
+\definecolor{main}{RGB}{0, 40, 110}
+\definecolor{gold}{RGB}{255, 128, 0}
 \color{main}
 
 
@@ -147,25 +148,35 @@
 % DOCUMENT BEGIN                         %
 %========================================%
 
+\RequirePackage{pagecolor}
+\RequirePackage{afterpage}
+
 \AtBeginDocument{
     \frontmatter
     \pagestyle{empty}
     \begin{titlepage}
         \centering
+        \vspace*{0.5cm}
         \includegraphics[height = 3cm]{logo.pdf} \\[0.5cm]
-        \textbf{\Large A.S.D. DOJO Trieste}
+        \textbf{\color{black}\Large A.S.D. DOJO Trieste}
         \vfill
-        \textbf{Libretto personale del} \\[0.5cm]
+        \textbf{\large Libretto personale del} \\[0.5cm]
         \textbf{\Huge SOCIO}
         \ifx\option@Age\@empty
         \else
             \\[0.5cm]
             \textbf{\option@Age}
         \fi
-        \vfill
+        \vfill\vfill
         \includegraphics[height = 1cm]{fijlkam.pdf} \\
         Associazione sportiva affiliata \\
         alla FIJLKAM e al CONI
+        \vspace{0.5cm}
+        \tikz[remember picture, overlay] 
+            \draw[rounded corners = 5mm, line width = 1mm, color = gold]
+                (current page text area.south west)
+                rectangle
+                (current page text area.north east);
     \end{titlepage}
     \mainmatter{}
     \pagestyle{std}
