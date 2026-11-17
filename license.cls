@@ -17,6 +17,7 @@
 \DeclareStringOption[10pt]{FontSize}
 \DeclareStringOption[12cm]{PaperWidth}
 \DeclareStringOption[16cm]{PaperHeight}
+\DeclareStringOption[default]{Style}
 
 \ProcessKeyvalOptions*
 
@@ -88,7 +89,9 @@
 \RequirePackage{xcolor}
 
 \definecolor{main}{RGB}{0, 40, 110}
-\definecolor{gold}{RGB}{255, 128, 0}
+\definecolor{orange}{RGB}{255, 128, 0}
+\definecolor{blue}{RGB}{0, 70, 170}
+
 \color{main}
 
 
@@ -162,15 +165,21 @@
 
 \RequirePackage{pagecolor}
 \RequirePackage{afterpage}
+\RequirePackage{ifthen}
 
 \AtBeginDocument{
     \frontmatter
     \pagestyle{empty}
     \begin{titlepage}
         \centering
+        \ifthenelse{\equal{\option@Style}{white}}{}{
+            \newpagecolor{blue}
+            \afterpage{\restorepagecolor}
+            \color{orange}
+        }
         \vspace*{0.5cm}
-        \includegraphics[height = 3cm]{logo.pdf} \\[0.5cm]
-        \textbf{\color{black}\Large A.S.D. DOJO Trieste}
+        \ifthenelse{\equal{\option@Style}{white}}{\includegraphics[height = 3cm]{logo.pdf}}{\includegraphics[height = 3cm]{logo-white.pdf}} \\[0.5cm]
+        \textbf{\ifthenelse{\equal{\option@Style}{white}}{\color{black}}{}\Large A.S.D. DOJO Trieste}
         \vfill
         \textbf{\large Libretto personale del} \\[0.5cm]
         \textbf{\Huge SOCIO}
@@ -180,12 +189,12 @@
             \textbf{\option@Age}
         \fi
         \vfill\vfill
-        \includegraphics[height = 1cm]{fijlkam.pdf} \\
+        \ifthenelse{\equal{\option@Style}{white}}{\includegraphics[height = 1cm]{fijlkam}}{\includegraphics[height = 1cm]{fijlkam-white.pdf}} \\
         Associazione sportiva affiliata \\
         alla FIJLKAM e al CONI
         \vspace{0.5cm}
         \tikz[remember picture, overlay] 
-            \draw[rounded corners = 5mm, line width = 1mm, color = gold]
+            \draw[rounded corners = 5mm, line width = 1mm, color = orange]
                 (current page text area.south west)
                 rectangle
                 (current page text area.north east);
@@ -199,6 +208,9 @@
 % DOCUMENT END                           %
 %========================================%
 
+\RequirePackage{nextpage}
+
+
 \AtEndDocument{
     \backmatter
     \tableofcontents
@@ -208,7 +220,16 @@
         Il presente libretto ha validità decennale dalla data di rilazio e deve essere conservato con cura dal socio. \\
         In caso di smarrimento o spazio insufficiente, il socio è tenuto a richiederne un altro.
     \end{center}
+    \pagestyle{empty}
     \thispagestyle{empty}
+    
+    \newpage \hbox{}
+    \ifodd\c@page
+        \newpage \hbox{}
+    \else\fi
+    \ifthenelse{\equal{\option@Style}{white}}{}{
+        \newpagecolor{blue}
+    }
 }
 
 
@@ -296,5 +317,35 @@
         {VERDE\\BLU} \\
         BLU \\
         MARRONE
+    \end{logtable}%
+}
+
+\newcommand{\competitions}[2]{%
+    \begin{logtable}{
+        colspec = {c X[c] X[2, c] c},
+        column{1} = {
+            leftsep = 1.5mm,
+            rightsep = 1.5mm
+        },
+        cell{1}{1} = {c=4}{c},
+        cell{3-Z}{1} = {cmd=\RowNumber{#1}}
+    }
+        #2 GARE \\
+        N. & {DATA E\\LUOGO} & COMPETIZIONE & RES\@. \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\
+    \end{logtable}%
+}
+
+\newcommand{\activity}[1]{%
+    \begin{logtable}{
+        colspec = {c X[c] X[2, c]},
+        column{1} = {
+            leftsep = 1.5mm,
+            rightsep = 1.5mm
+        },
+        cell{1}{1} = {c=3}{c},
+        cell{3-Z}{1} = {cmd=\RowNumber{#1}}
+    }
+        ATTIVITÀ \\
+        N. & {DATA E\\LUOGO} & EVENTO \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\
     \end{logtable}%
 }
