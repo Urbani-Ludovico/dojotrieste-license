@@ -89,45 +89,17 @@
     % Competitions
     %
     \newpage
-    \newcommand{\competitions}[1]{%
-        \begin{logtable}{
-            colspec = {c X[c] X[2, c] c},
-            column{1} = {
-                leftsep = 1.5mm,
-                rightsep = 1.5mm
-            },
-            cell{1}{1} = {c=4}{c},
-            cell{3-Z}{1} = {cmd=\RowNumber{#1}}
-        }
-            GARE \\
-            N. & {DATA E\\LUOGO} & COMPETIZIONE & RES\@. \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\
-        \end{logtable}%
-    }
     \addcontentsline{toc}{chapter}{GARE}
-    \competitions{0}
-    \competitions{10}
-    \competitions{20}
-    \competitions{30}
-    \competitions{40}
+    \competitions{0}{}
+    \competitions{10}{}
+    \competitions{20}{}
+    \competitions{30}{}
+    \competitions{40}{}
 
     %
     % Activity
     %
     \newpage
-    \newcommand{\activity}[1]{%
-        \begin{logtable}{
-            colspec = {c X[c] X[2, c]},
-            column{1} = {
-                leftsep = 1.5mm,
-                rightsep = 1.5mm
-            },
-            cell{1}{1} = {c=3}{c},
-            cell{3-Z}{1} = {cmd=\RowNumber{#1}}
-        }
-            ATTIVITÀ \\
-            N. & {DATA E\\LUOGO} & EVENTO \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\
-        \end{logtable}%
-    }
     \addcontentsline{toc}{chapter}{ATTIVITÀ}
     \activity{0}
     \activity{10}

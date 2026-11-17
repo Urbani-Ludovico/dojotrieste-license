@@ -31,5 +31,47 @@
     \addcontentsline{toc}{chapter}{GRADUAZIONI}
     \belts{}
 
+    %
+    % Criterium
+    %
+    \newpage
+    \newcommand{\criterium}[1]{%
+        \begin{logtable}{
+            colspec = {c X[c] X[c] c X[c]},
+            column{1} = {
+                leftsep = 1.5mm,
+                rightsep = 1.5mm
+            },
+            row{3-Z} = {
+                ht = \StretchNRows{5}
+            },
+            cell{1}{1} = {c=5}{c},
+            cell{3-Z}{1} = {cmd=\RowNumber{#1}}
+        }
+            CRITERIUM \\
+            N. & DATA & TAPPA & RES & LOGO\@. \\ \\ \\ \\ \\ \\
+        \end{logtable}%
+    }
+    \addcontentsline{toc}{chapter}{CRITERIUM}
+    \criterium{0}
+    \criterium{5}
+    \criterium{10}
+    \criterium{15}
+    \criterium{20}
 
+    %
+    % Competitions
+    %
+    \newpage
+    \addcontentsline{toc}{chapter}{GARE}
+    \competitions{0}{ALTRE}
+    \competitions{10}{ALTRE}
+
+    %
+    % Activity
+    %
+    \newpage
+    \addcontentsline{toc}{chapter}{ATTIVITÀ}
+    \activity{0}
+    \activity{10}
 \end{document}
